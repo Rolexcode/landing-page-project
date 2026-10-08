@@ -44,3 +44,27 @@ if ("IntersectionObserver" in window && revealItems.length) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".desktop-nav .nav-link");
+
+if ("IntersectionObserver" in window && sections.length && navLinks.length) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "is-active",
+            link.getAttribute("href") === `#${entry.target.id}`
+          );
+        });
+      });
+    },
+    { rootMargin: "-35% 0px -55% 0px" }
+  );
+
+  sections.forEach((section) => sectionObserver.observe(section));
+}
