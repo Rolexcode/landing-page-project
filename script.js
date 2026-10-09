@@ -9,6 +9,8 @@ if (menuToggle && mobileMenu) {
       isOpen ? "Close navigation menu" : "Open navigation menu"
     );
     mobileMenu.classList.toggle("is-open", isOpen);
+    mobileMenu.inert = !isOpen;
+    mobileMenu.setAttribute("aria-hidden", String(!isOpen));
     document.body.classList.toggle("menu-open", isOpen);
   };
 
@@ -23,6 +25,13 @@ if (menuToggle && mobileMenu) {
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 760) setMenuState(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+      setMenuState(false);
+      menuToggle.focus();
+    }
   });
 }
 
