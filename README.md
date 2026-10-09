@@ -2,7 +2,7 @@
 
 A responsive landing page for **Nexora**, a fictional productivity workspace designed to help teams organise projects and stay focused.
 
-**Live website:** https://nexora-productivity.vercel.app
+**Live website:** https://nexora-landing-page-two.vercel.app
 
 ## Features
 
