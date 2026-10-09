@@ -1545,3 +1545,51 @@ select {
     letter-spacing: -0.07em;
   }
 }
+
+
+/* Expressive display type, with a quiet and readable body face. */
+.hero h1,
+.section-intro h2,
+.section-heading h2,
+.cta-card h2,
+.service-card h3,
+.workspace-heading h2 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+}
+
+.hero h1 {
+  font-weight: 600;
+  letter-spacing: -0.065em;
+}
+
+.section-intro h2,
+.section-heading h2,
+.cta-card h2 {
+  letter-spacing: -0.045em;
+}
+
+.heading-avatar {
+  background: #e8d7c9;
+  color: #75442f;
+}
+
+.avatar-purple {
+  background: #f1dfd5;
+  color: #8a4a31;
+}
+
+.avatar-green {
+  background: #dce8d8;
+  color: #315c46;
+}
+
+.avatar-orange {
+  background: #f1dfd5;
+  color: #8a4a31;
+}
+
+@media (max-width: 760px) {
+  .hero h1 {
+    letter-spacing: -0.06em;
+  }
+}
