@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -156,22 +156,28 @@
 
                   <div class="activity-card">
                     <div class="activity-header">
-                      <div>
+                      <div class="activity-title">
                         <span class="mini-label">Team activity</span>
-                        <strong>This week</strong>
+                        <strong data-period-label>This week</strong>
                       </div>
-                      <span class="activity-total">142 tasks</span>
+                      <div class="activity-tools">
+                        <div class="range-switch" role="group" aria-label="Activity chart range">
+                          <button class="range-button is-active" type="button" data-chart-range="week" aria-pressed="true">Week</button>
+                          <button class="range-button" type="button" data-chart-range="month" aria-pressed="false">Month</button>
+                        </div>
+                        <span class="activity-total" data-activity-total>142 tasks</span>
+                      </div>
                     </div>
-                    <div class="chart" aria-hidden="true">
-                      <span style="--height: 38%"></span>
-                      <span style="--height: 54%"></span>
-                      <span style="--height: 47%"></span>
-                      <span style="--height: 72%"></span>
-                      <span style="--height: 63%"></span>
-                      <span style="--height: 86%"></span>
-                      <span style="--height: 76%"></span>
+                    <div class="chart" data-activity-chart aria-label="Tasks completed over time">
+                      <span style="--height: 38%" data-value="38"></span>
+                      <span style="--height: 54%" data-value="54"></span>
+                      <span style="--height: 47%" data-value="47"></span>
+                      <span style="--height: 72%" data-value="72"></span>
+                      <span style="--height: 63%" data-value="63"></span>
+                      <span style="--height: 86%" data-value="86"></span>
+                      <span style="--height: 76%" data-value="76"></span>
                     </div>
-                    <div class="chart-labels" aria-hidden="true">
+                    <div class="chart-labels" data-chart-labels aria-hidden="true">
                       <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
                     </div>
                   </div>
@@ -195,7 +201,7 @@
         <div class="container about-grid">
           <div class="section-intro" data-reveal>
             <p class="section-kicker">The day-to-day, made clearer</p>
-            <h2>Know what is moving and what is next.</h2>
+            <h2>Know what is moving <em>and what is next.</em></h2>
           </div>
 
           <div class="about-copy" data-reveal data-reveal-delay="120">
@@ -218,7 +224,7 @@
           <div class="section-heading" data-reveal>
             <div>
               <p class="section-kicker">A place for the whole project</p>
-              <h2>From the first plan to the final handoff.</h2>
+              <h2>From the first plan to <em>the final handoff.</em></h2>
             </div>
             <p>
               Keep plans, decisions, and progress connected as work moves from one person to the next.
@@ -291,7 +297,7 @@
           <div class="section-heading testimonials-heading" data-reveal>
             <div>
               <p class="section-kicker">Example use cases</p>
-              <h2>Keep everyone on the same page.</h2>
+              <h2>Keep everyone <em>on the same page.</em></h2>
             </div>
             <p>Illustrative quotes showing the kinds of problems Nexora is designed to solve.</p>
           </div>
@@ -348,14 +354,14 @@
           <div class="cta-card" data-reveal>
             <div>
               <p class="section-kicker">Bring your work together</p>
-              <h2>Give every project a clearer path.</h2>
+              <h2>Give every project <em>a clearer path.</em></h2>
               <p>
                 Bring your team's projects, priorities, and momentum into one
                 focused workspace.
               </p>
             </div>
-            <a class="button button-light" href="mailto:hello@nexora.example">
-              Explore the workspace
+            <a class="button button-light" href="#services">
+              Explore the features
               <span aria-hidden="true">↗</span>
             </a>
           </div>
