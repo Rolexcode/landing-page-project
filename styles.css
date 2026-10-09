@@ -1926,3 +1926,109 @@ button:focus-visible {
     transition: none;
   }
 }
+
+
+/* Selectable activity bars and their contextual detail popover. */
+.activity-card {
+  position: relative;
+}
+
+.chart {
+  position: relative;
+  overflow: visible;
+}
+
+.chart-bar {
+  display: block;
+  flex: 1 1 0;
+  min-width: 8px;
+  height: var(--height);
+  padding: 0;
+  border: 0;
+  border-radius: 5px 5px 2px 2px;
+  background: linear-gradient(to top, #315c46, #8aa58f);
+  opacity: 0.92;
+  cursor: pointer;
+  transform-origin: bottom;
+  transition: height 420ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.chart-bar:nth-child(3n) {
+  background: linear-gradient(to top, #d96b45, #e7b09a);
+}
+
+.chart-bar:hover,
+.chart-bar:focus-visible {
+  opacity: 1;
+  filter: saturate(1.15);
+  transform: scaleX(1.06);
+}
+
+.chart-bar.is-selected {
+  opacity: 1;
+  filter: saturate(1.2);
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+.chart-bar:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.chart-tooltip {
+  position: absolute;
+  z-index: 5;
+  top: 6px;
+  left: 50%;
+  width: max-content;
+  min-width: 138px;
+  max-width: min(205px, calc(100% - 12px));
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(255, 253, 248, 0.12);
+  border-radius: 7px;
+  background: #20231f;
+  color: #fffdf8;
+  box-shadow: 0 8px 24px rgba(32, 35, 31, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -4px);
+  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+}
+
+.chart-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.chart-tooltip strong,
+.chart-tooltip span {
+  display: block;
+}
+
+.chart-tooltip strong {
+  margin-bottom: 0.25rem;
+  color: #e6c7b6;
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.chart-tooltip span {
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.chart-tooltip .tooltip-detail {
+  margin-top: 0.15rem;
+  color: #d0d5cc;
+  font-size: 0.61rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-bar,
+  .chart-tooltip {
+    transition: none;
+  }
+}
